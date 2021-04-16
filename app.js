@@ -4,8 +4,9 @@ import { capturePokemon } from './local-storage-utils.js';
 import { findByPokemonName } from './utils.js';
 
 
-let captured = 0;
+
 const button = document.querySelector('button');
+let captured = 0;
 
 // initialize state
 function populateTheDom() {
@@ -34,7 +35,11 @@ function populateTheDom() {
     img3.src = somePokemon[2].url_image;
     pokeLabel3.append(img3);
     pokeRadio3.value = somePokemon[2].pokemon;
+
+
 }
+
+
 
 populateTheDom();
 
@@ -45,6 +50,8 @@ button.addEventListener('click', () => {
 
     const pokeThing = findByPokemonName(selectedRadioButton.value);
     capturePokemon(pokeThing);
+
+    captured++;
 
     if (captured < 10) { 
         populateTheDom();
