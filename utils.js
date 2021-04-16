@@ -1,4 +1,4 @@
-import { pokeData } from './data.js';
+import pokeData from './data.js';
 
 
 export function findByID(array, id) {

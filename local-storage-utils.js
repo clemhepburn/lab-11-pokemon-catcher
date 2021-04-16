@@ -55,3 +55,8 @@ export function capturePokemon(pokemon) {
     return pokedex;
 
 }
+
+export function clearGame() {
+    const clearedStorage = localStorage.removeItem(POKEDEX);
+    return clearedStorage;
+}
