@@ -32,3 +32,47 @@ clearButton.addEventListener('click', () => {
 printButton.addEventListener('click', () => {
     window.print();
 });
+
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+
+const pokeNames = [];
+const pokeCaptured = [];
+const pokeEncountered = [];
+
+for (let pokemon of pokedex) {
+    pokeNames.push(pokemon.id);
+    pokeCaptured.push(pokemon.captured);
+    pokeEncountered.push(pokemon.encountered);
+}
+
+var myChart = new Chart(ctx, { //eslint-disable-line
+    type: 'bar',
+    data: {
+        labels: pokeNames,
+        datasets: [
+            {
+                label: 'Pokemon Captured',
+                data:  pokeCaptured,
+                backgroundColor: 'cornflowerblue',
+                borderColor: 'thistle',
+                borderWidth: 1
+            },
+            {
+                label: 'Pokemon Encountered',
+                data:  pokeEncountered,
+                backgroundColor: 'thistle',
+                borderColor: 'cornflowerblue',
+                borderWidth: 1
+            }
+        ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
