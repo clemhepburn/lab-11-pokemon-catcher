@@ -15,14 +15,14 @@ for (let pokemon of pokedex) {
     encountered.push(pokemon.encountered);
 }
 
-const table = document.querySelector('.pokemon-table');
+//const table = document.querySelector('.pokemon-table');
 const clearButton = document.querySelector('.clear-button');
 const printButton = document.getElementById('print-button');
 
-for (let pokeItem of pokedex) {
+/*for (let pokeItem of pokedex) {
     const trOfPoke = createTableRow(pokeItem);
     table.append(trOfPoke);
-}
+}*/
 
 clearButton.addEventListener('click', () => {
     clearGame();
