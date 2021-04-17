@@ -17,6 +17,7 @@ for (let pokemon of pokedex) {
 
 const table = document.querySelector('.pokemon-table');
 const clearButton = document.querySelector('.clear-button');
+const printButton = document.getElementById('print-button');
 
 for (let pokeItem of pokedex) {
     const trOfPoke = createTableRow(pokeItem);
@@ -26,4 +27,8 @@ for (let pokeItem of pokedex) {
 clearButton.addEventListener('click', () => {
     clearGame();
     window.location = '../index.html';
+});
+
+printButton.addEventListener('click', () => {
+    window.print();
 });
